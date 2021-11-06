@@ -1,6 +1,6 @@
 # proyecto-ciclo4
 
-Repositorio donde se almacena el proyecto del grupo 9
+Repositorio donde se almacena el proyecto del grupo 7
 
 ## Integrantes del equipo:
 
