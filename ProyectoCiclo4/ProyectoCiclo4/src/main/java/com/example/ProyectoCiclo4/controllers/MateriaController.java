@@ -31,7 +31,7 @@ public class MateriaController {
      */
 
      
-     @PostMapping("/equipos")
+     @PostMapping("/materias")
      public ResponseEntity<Map<String, String>> guardarMateria(@Valid @RequestBody MateriaModel materia){
         this.materiaService.guardarMaterias(materia);
         //Mostrar un mensaje persnolizado al cliente

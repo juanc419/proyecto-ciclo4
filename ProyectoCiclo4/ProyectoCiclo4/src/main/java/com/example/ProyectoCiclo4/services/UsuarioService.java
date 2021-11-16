@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UsuarioService {
     
-    @Autowired // Creamos la instancia del repository
+    @Autowired 
     UsuarioRepository usuarioRepository;
 
     //Metodo para guardar usuarios
@@ -25,20 +25,16 @@ public class UsuarioService {
         return this.usuarioRepository.findAll();
     }
 
-    //Metodo para buscar equipo por ID
+    //Metodo para buscar usuario por ID
     public Optional<UsuarioModel> buscarPorId(String id){
         return this.usuarioRepository.findById(id);
     }
-    
-    //Metodo para verificar si ya existe un usuario
-    public Boolean verificar(String id){
-        return this.usuarioRepository.existsById(id);
-    }
 
-    //Metodo para eliminar un usuario
-    public void eliminar(String id){
-        this.usuarioRepository.deleteById(id);
-    }
+    //Metodo para buscar usuario por USENAME
+    public UsuarioModel buscarPorusername(String username){
+        return this.usuarioRepository.findByUsername(username).orElse(new UsuarioModel());
+    } 
+    
 
 }
 
