@@ -16,7 +16,7 @@ public class UsuarioService {
     UsuarioRepository usuarioRepository;
 
     //Metodo para guardar usuarios
-    public void guardarUsuarios(UsuarioModel usuario){
+    public void guardar(UsuarioModel usuario){
         this.usuarioRepository.save(usuario);
     }
 
