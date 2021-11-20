@@ -13,7 +13,9 @@ public class PeriodoModel {
     private UsuarioModel usuario;
     private MateriaModel materia;
     private String fecha;
-    private NotaModel nota;
+    //private NotaModel nota;
+    private Float nota;
+
     public String getId() {
         return id;
     }
@@ -45,12 +47,18 @@ public class PeriodoModel {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
-    public NotaModel getNota() {
+    /*public NotaModel getNota() {
         return nota;
     }
     public void setNota(NotaModel nota) {
         this.nota = nota;
+    }*/
+
+    public Float getNota() {
+        return nota;
+    }
+    public void setNota(Float nota) {
+        this.nota = nota;
     }
 
-    
 }
