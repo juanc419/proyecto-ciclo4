@@ -31,7 +31,7 @@ public class Autorizacion implements Filter {
                 }else{
                     String hash=httpServletRequest.getHeader("Authorization");
                     if(hash==null || hash.trim().equals("")){
-                        response.setContentType("application/ason");
+                        response.setContentType("application/json");
                         String body="{\"authorization\":\"NO\"}";
                         response.getWriter().write(body);
                     }
@@ -42,8 +42,8 @@ public class Autorizacion implements Filter {
                         }
                         
                     }catch (Exception e) {
-                        response.setContentType("application/jason");
-                        String body="{\"authorization\":\"TOKEN NO VALIDO\"}";
+                        response.setContentType("application/json");
+                        String body="{\"autorizacion\":\"TOKEN NO VALIDO\"}";
                         response.getWriter().write(body);
                     }
 
