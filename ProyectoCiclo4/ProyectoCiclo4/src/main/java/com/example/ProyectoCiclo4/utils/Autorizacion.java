@@ -27,7 +27,7 @@ public class Autorizacion implements Filter {
                 
                 HttpServletResponse httpServletResponse=(HttpServletResponse) response;
                 httpServletResponse.setHeader("Access-Control-Allow-Origin", "*");
-                httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization");
+                httpServletResponse.setHeader("Access-Control-Allow-Headers", "Authorization,Content-Type");
 
                 // http://localhost:8080/
                 
@@ -43,7 +43,7 @@ public class Autorizacion implements Filter {
                     }
                     try{
                         Jws<Claims> claims=Jwts.parser().setSigningKey(KEY).parseClaimsJws(hash);
-                        if((url.contains("/api/materias")||url.contains("/api/periodos"))&&(!claims.getBody().get("username").equals(""))){
+                        if((url.contains("/api/verificar")||url.contains("/api/materias")||url.contains("/api/periodos"))&&(!claims.getBody().get("username").equals(""))){
                             chain.doFilter(request, response);
                         }
                         
